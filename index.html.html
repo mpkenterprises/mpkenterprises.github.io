@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPK Enterprises | Multi-Disciplinary Supply &amp; Service Solutions — Visakhapatnam</title>
+<meta name="description" content="MPK Enterprises is a Visakhapatnam-based, GeM-registered vendor delivering facility management, electrical, plumbing, HVAC, kitchen equipment and IT hardware supply &amp; services to corporates, government bodies, hospitals, schools and pharma plants.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14213D;
+    --paper:#F1EEE3;
+    --paper-2:#E7E1CE;
+    --white:#FBFAF5;
+    --accent:#D6862F;
+    --accent-2:#2F6459;
+    --steel:#5B6472;
+    --line:#C7BEA4;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk', sans-serif;
+    color:var(--ink);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.04em;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  button{font-family:inherit;cursor:pointer;}
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  .section{padding:96px 0;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;height:1px;background:var(--accent-2);display:inline-block;
+  }
+  :focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;}
+
+  /* ---------- HEADER ---------- */
+  header.site-header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(241,238,227,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    max-width:1180px;margin:0 auto;padding:16px 32px;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+  }
+  .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .logo-badge{
+    width:42px;height:42px;
+    background:var(--ink);
+    color:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;
+    clip-path:polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0% 50%);
+    flex-shrink:0;
+  }
+  .logo-text .name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;line-height:1.1;}
+  .logo-text .tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:var(--steel);text-transform:uppercase;}
+  nav.main-nav{display:flex;align-items:center;gap:30px;}
+  nav.main-nav a{
+    font-size:14px;font-weight:500;text-decoration:none;color:var(--ink);
+    position:relative;padding:4px 0;
+  }
+  nav.main-nav a::after{
+    content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--accent);
+    transition:width .2s ease;
+  }
+  nav.main-nav a:hover::after{width:100%;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;
+    font-size:14px;font-weight:600;
+    text-decoration:none;
+    border-radius:var(--radius);
+    border:1px solid var(--ink);
+    white-space:nowrap;
+    transition:transform .15s ease, background .15s ease, color .15s ease;
+  }
+  .btn-solid{background:var(--ink);color:var(--paper);}
+  .btn-solid:hover{background:var(--accent);border-color:var(--accent);color:var(--ink);transform:translateY(-1px);}
+  .btn-outline{background:transparent;color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:var(--paper);transform:translateY(-1px);}
+  .nav-toggle{display:none;background:none;border:1px solid var(--ink);border-radius:var(--radius);padding:8px 10px;}
+  .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{
+    content:"";display:block;width:18px;height:2px;background:var(--ink);position:relative;
+  }
+  .nav-toggle span::before{position:absolute;top:-6px;}
+  .nav-toggle span::after{position:absolute;top:6px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:88px 0 70px;
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:64px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 4.4vw, 3.6rem);
+    font-weight:600;
+    line-height:1.05;
+    max-width:12ch;
+  }
+  .hero h1 .accent-word{color:var(--accent);}
+  .hero p.lede{
+    margin-top:22px;
+    max-width:52ch;
+    font-size:17px;
+    color:var(--steel);
+  }
+  .hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+  .hero-stats{
+    display:flex;gap:28px;margin-top:44px;flex-wrap:wrap;
+  }
+  .hero-stat .num{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:var(--ink);}
+  .hero-stat .label{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--steel);margin-top:2px;}
+
+  .stamp-wrap{
+    display:flex;flex-direction:column;align-items:center;gap:24px;
+  }
+  .stamp{
+    width:220px;height:220px;position:relative;
+  }
+  .stamp svg{width:100%;height:100%;}
+  .manifest{
+    width:100%;
+    border:1px solid var(--line);
+    background:var(--white);
+    padding:18px 20px;
+  }
+  .manifest .m-title{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--steel);
+    display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding-bottom:10px;margin-bottom:10px;
+  }
+  .manifest ul{list-style:none;margin:0;padding:0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
+  .manifest li{display:flex;justify-content:space-between;padding:5px 0;color:var(--ink);}
+  .manifest li span:last-child{color:var(--accent-2);}
+
+  /* ---------- SECTORS MARQUEE ---------- */
+  .sectors-strip{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:var(--paper-2);
+    padding:22px 0;
+    overflow:hidden;
+  }
+  .sectors-strip .label-row{
+    max-width:1180px;margin:0 auto 14px;padding:0 32px;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--steel);
+  }
+  .marquee{
+    display:flex;
+    width:max-content;
+    animation:scroll 28s linear infinite;
+  }
+  .sectors-strip:hover .marquee{animation-play-state:paused;}
+  .marquee .tag{
+    display:flex;align-items:center;gap:10px;
+    padding:10px 26px;
+    border-right:1px solid var(--line);
+    font-size:14.5px;font-weight:500;white-space:nowrap;
+  }
+  .marquee .tag::before{content:"";width:6px;height:6px;background:var(--accent);border-radius:50%;flex-shrink:0;}
+  @keyframes scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
+  /* ---------- CAPABILITIES ---------- */
+  .cap-head{
+    display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:56px;
+  }
+  .cap-head h2{font-size:clamp(1.8rem,3vw,2.4rem);max-width:16ch;}
+  .cap-head p{max-width:38ch;color:var(--steel);font-size:15px;}
+
+  .diagram-area{
+    position:relative;
+    width:100%;
+    max-width:760px;
+    aspect-ratio:1/0.92;
+    margin:0 auto;
+  }
+  .diagram-area svg.connectors{position:absolute;inset:0;width:100%;height:100%;}
+  .node-btn{
+    position:absolute;
+    transform:translate(-50%,-50%);
+    width:150px;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px 14px 14px 16px;
+    text-align:left;
+    display:flex;flex-direction:column;gap:8px;
+    box-shadow:0 1px 0 rgba(20,33,61,0.04);
+    transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .node-btn:hover, .node-btn.active{
+    border-color:var(--accent);
+    transform:translate(-50%,-50%) translateY(-3px);
+    box-shadow:0 8px 18px rgba(20,33,61,0.10);
+  }
+  .node-btn .n-icon{width:22px;height:22px;color:var(--accent-2);}
+  .node-btn.active .n-icon{color:var(--accent);}
+  .node-btn .n-label{font-size:13px;font-weight:600;line-height:1.25;}
+  .node-btn .n-index{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--steel);letter-spacing:0.06em;}
+
+  .hub{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:110px;height:110px;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--ink);
+    color:var(--paper);
+    clip-path:polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0% 50%);
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.02em;
+    text-align:center;
+    z-index:2;
+  }
+
+  .cap-detail{
+    margin-top:50px;
+    border:1px solid var(--line);
+    background:var(--white);
+    padding:28px 32px;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:22px;
+    align-items:flex-start;
+  }
+  .cap-detail .d-icon{
+    width:44px;height:44px;flex-shrink:0;
+    background:var(--paper-2);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--accent-2);
+  }
+  .cap-detail .d-icon svg{width:22px;height:22px;}
+  .cap-detail h3{font-size:19px;margin-bottom:6px;}
+  .cap-detail p{margin:0;color:var(--steel);font-size:15px;max-width:62ch;}
+
+  .cap-mobile-grid{display:none;}
+  .cap-mobile-card{
+    border:1px solid var(--line);background:var(--white);padding:20px;display:flex;gap:16px;
+  }
+  .cap-mobile-card .m-icon{width:38px;height:38px;flex-shrink:0;background:var(--paper-2);display:flex;align-items:center;justify-content:center;color:var(--accent-2);}
+  .cap-mobile-card .m-icon svg{width:20px;height:20px;}
+  .cap-mobile-card h3{font-size:15.5px;margin-bottom:4px;}
+  .cap-mobile-card p{margin:0;font-size:13.5px;color:var(--steel);}
+
+  /* ---------- WHY US ---------- */
+  .why-section{background:var(--ink);color:var(--paper);}
+  .why-section .eyebrow{color:var(--accent);}
+  .why-section .eyebrow::before{background:var(--accent);}
+  .why-section h2{color:var(--white);max-width:20ch;font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:50px;}
+  .plates{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(251,250,245,0.16);}
+  .plate{
+    background:var(--ink);
+    padding:32px 28px;
+  }
+  .plate .p-index{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.1em;}
+  .plate h3{color:var(--white);font-size:19px;margin:14px 0 10px;}
+  .plate p{margin:0;color:rgba(251,250,245,0.72);font-size:14.5px;}
+
+  /* ---------- TRUST ---------- */
+  .trust-section{padding:80px 0;}
+  .trust-grid{
+    display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:36px;align-items:center;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:36px 0;
+  }
+  .trust-item{display:flex;flex-direction:column;gap:4px;}
+  .trust-item .t-label{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;}
+  .trust-item .t-sub{font-size:13px;color:var(--steel);}
+  .trust-item::before{content:"";width:28px;height:2px;background:var(--accent);margin-bottom:8px;}
+  .gem-mini{
+    display:flex;align-items:center;gap:12px;
+    border:1px solid var(--line);padding:12px 18px;background:var(--white);
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+  }
+  .gem-mini svg{width:20px;height:20px;color:var(--accent-2);flex-shrink:0;}
+
+  /* ---------- CTA BANNER ---------- */
+  .cta-banner{
+    background:var(--accent-2);
+    color:var(--white);
+    padding:64px 0;
+  }
+  .cta-inner{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;}
+  .cta-inner h2{color:var(--white);font-size:clamp(1.6rem,2.8vw,2.1rem);max-width:16ch;}
+  .cta-inner p{color:rgba(251,250,245,0.82);margin-top:10px;max-width:44ch;font-size:15px;}
+  .cta-banner .btn-solid{background:var(--white);color:var(--ink);border-color:var(--white);}
+  .cta-banner .btn-solid:hover{background:var(--ink);color:var(--white);border-color:var(--ink);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:rgba(251,250,245,0.78);padding:72px 0 0;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:56px;border-bottom:1px solid rgba(251,250,245,0.14);
+  }
+  .footer-col h4{color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:18px;}
+  .footer-col ul{list-style:none;margin:0;padding:0;}
+  .footer-col li{margin-bottom:10px;font-size:14px;}
+  .footer-col a{text-decoration:none;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-brand .logo-text .name{color:var(--white);}
+  .footer-brand p{font-size:14px;max-width:32ch;margin-top:14px;color:rgba(251,250,245,0.62);}
+  .foot-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding:24px 0;flex-wrap:wrap;gap:10px;
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:rgba(251,250,245,0.5);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .marquee{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr;gap:48px;}
+    .plates{grid-template-columns:1fr;}
+    .trust-grid{grid-template-columns:1fr 1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+
+  @media (max-width:760px){
+    nav.main-nav{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);border-bottom:1px solid var(--line);
+      flex-direction:column;align-items:flex-start;padding:20px 32px;gap:16px;
+      display:none;
+    }
+    nav.main-nav.open{display:flex;}
+    .nav-toggle{display:block;}
+    .header-actions{display:flex;align-items:center;gap:10px;}
+    .diagram-area{display:none;}
+    .cap-mobile-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+    .cap-detail{display:none;}
+    .trust-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .section{padding:64px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="logo">
+      <div class="logo-badge">MPK</div>
+      <div class="logo-text">
+        <div class="name">MPK Enterprises</div>
+        <div class="tag">Supply &amp; Service Solutions</div>
+      </div>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#capabilities">Capabilities</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#why">Why MPK</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#contact" class="btn btn-solid">Request a Quote</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div>
+      <div class="eyebrow">Visakhapatnam &middot; GeM-Registered Vendor</div>
+      <h1>Six trades. <span class="accent-word">One</span> purchase order.</h1>
+      <p class="lede">MPK Enterprises supplies materials, equipment, spares and technical manpower across facility management, electrical, plumbing, HVAC, kitchen and IT — so corporates, government bodies, hospitals, schools and pharma plants deal with one accountable vendor instead of six.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-solid">Request a Quote</a>
+        <a href="#capabilities" class="btn btn-outline">See Capabilities</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">6</div><div class="label">Service Disciplines</div></div>
+        <div class="hero-stat"><div class="num">5</div><div class="label">Sectors Served</div></div>
+        <div class="hero-stat"><div class="num">GeM</div><div class="label">Registered Vendor</div></div>
+      </div>
+    </div>
+    <div class="stamp-wrap">
+      <div class="stamp">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <path id="circlePath" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"/>
+          </defs>
+          <circle cx="100" cy="100" r="96" fill="none" stroke="#14213D" stroke-width="1.5"/>
+          <circle cx="100" cy="100" r="78" fill="none" stroke="#14213D" stroke-width="1" stroke-dasharray="2 4"/>
+          <text font-family="IBM Plex Mono, monospace" font-size="10.5" letter-spacing="3" fill="#14213D">
+            <textPath href="#circlePath" startOffset="2%">GEM REGISTERED VENDOR &#9679; QUALITY &#9679; RELIABILITY &#9679;</textPath>
+          </text>
+          <polygon points="100,44 130,60 130,100 100,140 70,100 70,60" fill="none" stroke="#D6862F" stroke-width="2"/>
+          <text x="100" y="95" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="22" fill="#14213D">MPK</text>
+          <text x="100" y="112" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.5" fill="#2F6459">ENTERPRISES</text>
+        </svg>
+      </div>
+      <div class="manifest">
+        <div class="m-title"><span>Manifest</span><span>Status</span></div>
+        <ul>
+          <li><span>Facility &amp; Consumables</span><span>Active</span></li>
+          <li><span>Electrical &amp; Electronics</span><span>Active</span></li>
+          <li><span>Plumbing &amp; Painting</span><span>Active</span></li>
+          <li><span>HVAC / AC Systems</span><span>Active</span></li>
+          <li><span>Kitchen &amp; Cafeteria Eqpt.</span><span>Active</span></li>
+          <li><span>Computer Hardware &amp; Networking</span><span>Active</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTORS MARQUEE -->
+  <div class="sectors-strip" id="sectors">
+    <div class="label-row">Sectors We Serve</div>
+    <div class="marquee" id="marquee">
+      <div class="tag">Corporate &amp; MNC Companies</div>
+      <div class="tag">Government Organizations</div>
+      <div class="tag">Schools &amp; Educational Institutions</div>
+      <div class="tag">Hospitals &amp; Healthcare Facilities</div>
+      <div class="tag">Pharmaceutical Industries</div>
+      <div class="tag">Corporate &amp; MNC Companies</div>
+      <div class="tag">Government Organizations</div>
+      <div class="tag">Schools &amp; Educational Institutions</div>
+      <div class="tag">Hospitals &amp; Healthcare Facilities</div>
+      <div class="tag">Pharmaceutical Industries</div>
+    </div>
+  </div>
+
+  <!-- CAPABILITIES -->
+  <section class="section wrap" id="capabilities">
+    <div class="cap-head">
+      <h2>Supply &amp; Service Capabilities</h2>
+      <p>End-to-end solutions across six disciplines — sourced through an established dealer network and delivered by hands-on technical teams. Select a node to read more.</p>
+    </div>
+
+    <div class="diagram-area" id="diagramArea">
+      <svg class="connectors" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="50" y1="50" x2="50" y2="10" stroke="#5B6472" stroke-width="0.4" stroke-dasharray="1.5 1.5" vector-effect="non-scaling-stroke"/>
+        <line x1="50" y1="50" x2="86" y2="29" stroke="#5B6472" stroke-width="0.4" stroke-dasharray="1.5 1.5" vector-effect="non-scaling-stroke"/>
+        <line x1="50" y1="50" x2="86" y2="71" stroke="#5B6472" stroke-width="0.4" stroke-dasharray="1.5 1.5" vector-effect="non-scaling-stroke"/>
+        <line x1="50" y1="50" x2="50" y2="90" stroke="#5B6472" stroke-width="0.4" stroke-dasharray="1.5 1.5" vector-effect="non-scaling-stroke"/>
+        <line x1="50" y1="50" x2="14" y2="71" stroke="#5B6472" stroke-width="0.4" stroke-dasharray="1.5 1.5" vector-effect="non-scaling-stroke"/>
+        <line x1="50" y1="50" x2="14" y2="29" stroke="#5B6472" stroke-width="0.4" stroke-dasharray="1.5 1.5" vector-effect="non-scaling-stroke"/>
+        <circle cx="50" cy="10" r="0.9" fill="#D6862F"/>
+        <circle cx="86" cy="29" r="0.9" fill="#D6862F"/>
+        <circle cx="86" cy="71" r="0.9" fill="#D6862F"/>
+        <circle cx="50" cy="90" r="0.9" fill="#D6862F"/>
+        <circle cx="14" cy="71" r="0.9" fill="#D6862F"/>
+        <circle cx="14" cy="29" r="0.9" fill="#D6862F"/>
+      </svg>
+
+      <div class="hub">MPK<br>CORE</div>
+
+      <button class="node-btn active" style="left:50%; top:8%;" data-target="0">
+        <svg class="n-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20h16M6 20V9l6-4 6 4v11M10 20v-6h4v6"/></svg>
+        <span class="n-index">01</span>
+        <span class="n-label">Facility Management &amp; Consumables</span>
+      </button>
+
+      <button class="node-btn" style="left:88%; top:29%;" data-target="1">
+        <svg class="n-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
+        <span class="n-index">02</span>
+        <span class="n-label">Electrical &amp; Electronics</span>
+      </button>
+
+      <button class="node-btn" style="left:88%; top:71%;" data-target="2">
+        <svg class="n-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3s5 5.2 5 9a5 5 0 0 1-10 0c0-3.8 5-9 5-9Z"/><path d="M6 20h5M15 16l3 4"/></svg>
+        <span class="n-index">03</span>
+        <span class="n-label">Plumbing &amp; Painting Works</span>
+      </button>
+
+      <button class="node-btn" style="left:50%; top:92%;" data-target="3">
+        <svg class="n-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M4 6l16 12M20 6 4 18M2 12h20"/></svg>
+        <span class="n-index">04</span>
+        <span class="n-label">HVAC / Air Conditioning</span>
+      </button>
+
+      <button class="node-btn" style="left:12%; top:71%;" data-target="4">
+        <svg class="n-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12a8 8 0 0 1 16 0v6H4v-6Z"/><path d="M9 3.5c0 1-1 1-1 2.5M13 3.5c0 1-1 1-1 2.5M17 3.5c0 1-1 1-1 2.5"/></svg>
+        <span class="n-index">05</span>
+        <span class="n-label">Commercial Kitchen &amp; Cafeteria Equipment</span>
+      </button>
+
+      <button class="node-btn" style="left:12%; top:29%;" data-target="5">
+        <svg class="n-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg>
+        <span class="n-index">06</span>
+        <span class="n-label">Computer Hardware &amp; Networking</span>
+      </button>
+    </div>
+
+    <div class="cap-detail" id="capDetail">
+      <div class="d-icon" id="detailIcon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20h16M6 20V9l6-4 6 4v11M10 20v-6h4v6"/></svg>
+      </div>
+      <div>
+        <h3 id="detailTitle">Facility Management &amp; Consumables</h3>
+        <p id="detailText">Housekeeping consumables, pantry supplies, hygiene stock and facility support materials — replenished on a set schedule so day-to-day operations never stall.</p>
+      </div>
+    </div>
+
+    <div class="cap-mobile-grid">
+      <div class="cap-mobile-card">
+        <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20h16M6 20V9l6-4 6 4v11M10 20v-6h4v6"/></svg></div>
+        <div><h3>Facility Management &amp; Consumables</h3><p>Housekeeping consumables, pantry supplies and facility support materials, replenished on schedule.</p></div>
+      </div>
+      <div class="cap-mobile-card">
+        <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></div>
+        <div><h3>Electrical &amp; Electronics</h3><p>Wiring, fixtures, switchgear, panels and electronic components, sourced and installed by our technical teams.</p></div>
+      </div>
+      <div class="cap-mobile-card">
+        <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3s5 5.2 5 9a5 5 0 0 1-10 0c0-3.8 5-9 5-9Z"/><path d="M6 20h5M15 16l3 4"/></svg></div>
+        <div><h3>Plumbing &amp; Painting Works</h3><p>Pipeline repairs, sanitary fittings, waterproofing and painting, handled end-to-end from supply to finish.</p></div>
+      </div>
+      <div class="cap-mobile-card">
+        <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M4 6l16 12M20 6 4 18M2 12h20"/></svg></div>
+        <div><h3>HVAC / Air Conditioning</h3><p>Supply, installation, servicing and AMC of air-conditioning and ventilation systems.</p></div>
+      </div>
+      <div class="cap-mobile-card">
+        <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12a8 8 0 0 1 16 0v6H4v-6Z"/><path d="M9 3.5c0 1-1 1-1 2.5M13 3.5c0 1-1 1-1 2.5M17 3.5c0 1-1 1-1 2.5"/></svg></div>
+        <div><h3>Commercial Kitchen &amp; Cafeteria Equipment</h3><p>Industrial kitchen equipment and cafeteria fit-outs for institutional and corporate dining.</p></div>
+      </div>
+      <div class="cap-mobile-card">
+        <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <div><h3>Computer Hardware &amp; Networking</h3><p>Desktops, peripherals, structured cabling and network hardware, supplied and supported.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section why-section" id="why">
+    <div class="wrap">
+      <div class="eyebrow">Why MPK</div>
+      <h2>Built on expertise, network and time on the ground.</h2>
+    </div>
+    <div class="plates">
+      <div class="plate">
+        <div class="p-index">01 / TECHNICAL EXPERTISE</div>
+        <h3>Teams that read specification sheets</h3>
+        <p>Our people understand load calculations, pipe schedules and equipment datasheets — not just purchase orders — so what gets supplied is what the job actually needs.</p>
+      </div>
+      <div class="plate">
+        <div class="p-index">02 / DEALER &amp; DISTRIBUTOR NETWORK</div>
+        <h3>Sourcing without the delay</h3>
+        <p>Established relationships across categories mean faster procurement, verified stock and better pricing — passed on directly to your project.</p>
+      </div>
+      <div class="plate">
+        <div class="p-index">03 / FIELD EXPERIENCE</div>
+        <h3>Hands-on execution, not just paperwork</h3>
+        <p>Years spent on corporate, government and industrial sites around Visakhapatnam mean fewer surprises and faster resolution when they happen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust-section wrap">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="t-label">Quality</div>
+        <div class="t-sub">Vetted materials, standards-compliant execution</div>
+      </div>
+      <div class="trust-item">
+        <div class="t-label">Reliability</div>
+        <div class="t-sub">Consistent supply, no last-minute gaps</div>
+      </div>
+      <div class="trust-item">
+        <div class="t-label">Timely Execution</div>
+        <div class="t-sub">Delivered and installed on schedule</div>
+      </div>
+      <div class="gem-mini">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+        GeM Registered Vendor
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="wrap cta-inner">
+      <div>
+        <h2>Need one vendor for a multi-trade job?</h2>
+        <p>Send your material list, service scope, or both — we'll revert with a clear, itemised quote.</p>
+      </div>
+      <a href="#contact" class="btn btn-solid">Request a Quote</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER / CONTACT -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="logo">
+          <div class="logo-badge">MPK</div>
+          <div class="logo-text"><div class="name">MPK Enterprises</div></div>
+        </div>
+        <p>Multi-disciplinary supply &amp; service solutions for corporate, government, institutional and industrial clients — based in Visakhapatnam, Andhra Pradesh.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sectors</h4>
+        <ul>
+          <li>Corporate &amp; MNC Companies</li>
+          <li>Government Organizations</li>
+          <li>Schools &amp; Institutions</li>
+          <li>Hospitals &amp; Healthcare</li>
+          <li>Pharmaceutical Industries</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Capabilities</h4>
+        <ul>
+          <li>Facility Management</li>
+          <li>Electrical &amp; Electronics</li>
+          <li>Plumbing &amp; Painting</li>
+          <li>HVAC / Air Conditioning</li>
+          <li>Kitchen &amp; Cafeteria Eqpt.</li>
+          <li>Computer Hardware &amp; Networking</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <!-- PLACEHOLDER CONTACT DETAILS — replace with your real details -->
+          <li>Visakhapatnam, Andhra Pradesh, India</li>
+          <li><a href="mailto:info@mpkenterprises.in">info@mpkenterprises.in</a></li>
+          <li><a href="tel:+910000000000">+91 00000 00000</a></li>
+          <li class="mono" style="font-size:11px; color:rgba(251,250,245,0.5);">GeM Vendor ID: [Add your GeM ID]</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 MPK Enterprises. All rights reserved.</span>
+      <span>GeM-Registered Vendor &middot; Visakhapatnam, India</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
+  navToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mainNav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Capability diagram interactivity
+  const data = [
+    {
+      title: "Facility Management &amp; Consumables",
+      text: "Housekeeping consumables, pantry supplies, hygiene stock and facility support materials — replenished on a set schedule so day-to-day operations never stall.",
+      icon: '<path d="M4 20h16M6 20V9l6-4 6 4v11M10 20v-6h4v6"/>'
+    },
+    {
+      title: "Electrical &amp; Electronics",
+      text: "Wiring, fixtures, switchgear, panels and electronic components — sourced and installed by our own technical teams.",
+      icon: '<path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/>'
+    },
+    {
+      title: "Plumbing &amp; Painting Works",
+      text: "Pipeline repairs, sanitary fittings, waterproofing and painting works, handled end-to-end from material supply through to finish.",
+      icon: '<path d="M12 3s5 5.2 5 9a5 5 0 0 1-10 0c0-3.8 5-9 5-9Z"/><path d="M6 20h5M15 16l3 4"/>'
+    },
+    {
+      title: "HVAC / Air Conditioning",
+      text: "Supply, installation, servicing and AMC of air-conditioning and ventilation systems for offices, wards and plant floors.",
+      icon: '<path d="M12 2v20M4 6l16 12M20 6 4 18M2 12h20"/>'
+    },
+    {
+      title: "Commercial Kitchen &amp; Cafeteria Equipment",
+      text: "Industrial kitchen equipment, cafeteria fit-outs and ongoing maintenance for institutional and corporate dining facilities.",
+      icon: '<path d="M4 12a8 8 0 0 1 16 0v6H4v-6Z"/><path d="M9 3.5c0 1-1 1-1 2.5M13 3.5c0 1-1 1-1 2.5M17 3.5c0 1-1 1-1 2.5"/>'
+    },
+    {
+      title: "Computer Hardware &amp; Networking",
+      text: "Desktops, peripherals, structured cabling and network hardware — supplied and supported for offices and institutions.",
+      icon: '<rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/>'
+    }
+  ];
+
+  const nodeButtons = document.querySelectorAll('.node-btn');
+  const detailTitle = document.getElementById('detailTitle');
+  const detailText = document.getElementById('detailText');
+  const detailIcon = document.getElementById('detailIcon');
+
+  function setActive(index){
+    nodeButtons.forEach(b => b.classList.remove('active'));
+    nodeButtons[index].classList.add('active');
+    const item = data[index];
+    detailTitle.innerHTML = item.title;
+    detailText.innerHTML = item.text;
+    detailIcon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">' + item.icon + '</svg>';
+  }
+
+  nodeButtons.forEach((btn, i) => {
+    btn.addEventListener('click', () => setActive(i));
+    btn.addEventListener('focus', () => setActive(i));
+  });
+</script>
+
+</body>
+</html>
